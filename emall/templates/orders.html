@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品管理员系统</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #header {
+      background-color: #44b5f2;
+      color: #fff;
+      padding: 1%;
+      text-align: center;
+    }
+
+    .user-avatar {
+      position: absolute;
+      right: 1%;
+      top: 1%;
+      border-radius: 50%;
+      width: 3%;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    #fixed-window {
+      position: fixed;
+      top: 60%;
+      left: 43%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      width: 80%;
+      height: 70%;
+      overflow-y: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #fixed-window table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #fixed-window th,
+    #fixed-window td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    #fixed-window th:nth-child(1) {
+      width: 10%;
+    }
+
+    #fixed-window th:nth-child(2) {
+      width: 15%;
+    }
+
+    #fixed-window th:nth-child(3) {
+      width: 30%;
+    }
+
+    #fixed-window th:nth-child(4) {
+      width: 20%;
+    }
+
+    #fixed-window th:nth-child(5) {
+      width: 25%;
+    }
+
+    .order-info {
+      white-space: pre-line;
+    }
+
+    #sidebar {
+      position: fixed;
+      top: 60%;
+      right: 1%;
+      transform: translate(0, -50%);
+      background-color: #fff;
+      padding: 20px;
+      width: 14%;
+      height: 70%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar-item {
+      color: #44b5f2;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="header">
+    <h1>商品管理员系统</h1>
+    <img src="{{ url_for('static', filename='user_avatar.webp') }}" alt="User Avatar" class="user-avatar">
+  </div>
+
+  <div id="fixed-window">
+    <table>
+      <colgroup>
+        <col style="width: 10%;">
+        <col style="width: 15%;">
+        <col style="width: 30%;">
+        <col style="width: 20%;">
+        <col style="width: 25%;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>订单编号</th>
+          <th>顾客名</th>
+          <th>商品信息</th>
+          <th>订单价格</th>
+          <th>订单时间</th>
+        </tr>
+      </thead>
+      <tbody id="orders-table-body">
+        <!-- Dynamically generated rows will go here -->
+      </tbody>
+    </table>
+  </div>
+
+
+  <div id="sidebar">
+    <div class="sidebar-item" onclick="goToLog()">欢迎, {{ username }}</div>
+    <div class="sidebar-item" onclick="goToProfile()">购物主页</div>
+    <div class="sidebar-item" onclick="goToAdmin()">商品管理</div>
+    <div class="sidebar-item" onclick="goToOrder()">订单管理</div>
+    <img src="{{ url_for('static', filename='joke.jpg') }}" alt="just joke" width="100%">
+  </div>
+
+  <!-- Bootstrap JS and dependencies (jQuery) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+  <script>
+    // Your JavaScript functions go here
+    function goToProfile(){
+      window.location.href = '/';
+    }
+    function goToAdmin(){
+      window.location.href = '/admin';
+    }
+
+
+    var ordersData = {{ order_data | tojson | safe }};
+
+    // Function to dynamically populate the table rows
+    function populateOrdersTable() {
+      var tbody = document.getElementById('orders-table-body');
+
+      ordersData.forEach(function (order) {
+        var row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${order.order_id}</td>
+          <td>${order.username}</td>
+          <td class="order-info">${formatOrderInfo(order.goods)}</td>
+          <td>${order.totalprice}</td>
+          <td>${order.orderdate}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Function to format order information with line breaks at spaces
+    function formatOrderInfo(products) {
+      return products.replace(/ /g, '\n');
+    }
+
+    // Call the function to populate the table
+    window.onload = populateOrdersTable;
+
+
+  </script>
+</body>
+</html>

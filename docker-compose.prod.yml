@@ -1,0 +1,55 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    container_name: emall_app_prod
+    expose:
+      - "8000"
+    volumes:
+      - ./emall:/app/emall
+      - ./test:/app/test
+    environment:
+      - FLASK_ENV=production
+      - DOCKER=true
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_PORT=8000
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - db
+      - redis
+    command: gunicorn -w 2 -b 0.0.0.0:8000 emall:app
+  
+  db:
+    image: postgres:12.18
+    container_name: emall_db_prod
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: prod_mydatabase
+    ports:
+      - "5435:5432"
+    volumes:
+      - prod_postgres_data:/var/lib/postgresql/data
+      - ./init_db.sql:/docker-entrypoint-initdb.d/init.sql
+  
+  nginx:
+    image: nginx:latest
+    container_name: emall_nginx_prod
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./emall:/app/emall
+    depends_on:
+      - web
+  
+  redis:
+    image: redis:latest
+    container_name: emall_redis_prod
+    ports:
+      - "6379:6379"
+
+volumes:
+  prod_postgres_data:

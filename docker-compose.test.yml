@@ -1,0 +1,67 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    container_name: emall_app_test
+    ports:
+      - "8943:8943"
+    volumes:
+      - ./emall:/app/emall
+      - ./test:/app/test
+    environment:
+      - FLASK_ENV=testing
+      - DOCKER=true
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_PORT=8943
+      - PYTHONPATH=/app
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - db
+      - redis
+      - selenium
+    command: ["sh", "-c", "sleep 10 && pytest && echo 'Tests passed!'"]
+
+  db:
+    image: postgres:12.18
+    container_name: emall_db_test
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: test_mydatabase
+    ports:
+      - "5433:5432"
+    volumes:
+      - test_postgres_data:/var/lib/postgresql/data
+      - ./init_db.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+
+  redis:
+    image: redis:latest
+    container_name: emall_redis_test
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      retries: 3
+      start_period: 5s
+    
+  selenium:
+    image: selenium/standalone-chrome:latest
+    container_name: selenium
+    ports:
+      - "4444:4444"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4444"]
+      interval: 10s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  test_postgres_data:

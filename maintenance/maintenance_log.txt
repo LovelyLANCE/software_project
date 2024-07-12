@@ -1,0 +1,651 @@
+Creating volume "software_project_dev_postgres_data" with default driver
+Found orphan containers (selenium) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+Building web
+Step 1/5 : FROM python:3.9-slim
+ ---> b4045d7da52e
+Step 2/5 : WORKDIR /app
+ ---> Using cache
+ ---> 8d7e6c3b57b1
+Step 3/5 : COPY . .
+ ---> 837c1a7a72a0
+Step 4/5 : RUN pip install --no-cache-dir -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple
+ ---> Running in 2545c7d61bd3
+Looking in indexes: https://mirrors.cloud.tencent.com/pypi/simple
+Collecting async-timeout==4.0.3
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/a7/fa/e01228c2938de91d47b307831c62ab9e4001e747789d0b05baf779a6488c/async_timeout-4.0.3-py3-none-any.whl (5.7 kB)
+Collecting attrs==23.2.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/e0/44/827b2a91a5816512fcaf3cc4ebc465ccd5d598c45cefa6703fcf4a79018f/attrs-23.2.0-py3-none-any.whl (60 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.8/60.8 kB 4.3 MB/s eta 0:00:00
+Collecting bcrypt==4.1.3
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/97/00/21e34b365b895e6faf9cc5d4e7b97dd419e08f8a7df119792ec206b4a3fa/bcrypt-4.1.3-cp39-abi3-manylinux_2_28_x86_64.whl (283 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 283.7/283.7 kB 1.1 MB/s eta 0:00:00
+Collecting blinker==1.8.2
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/bb/2a/10164ed1f31196a2f7f3799368a821765c62851ead0e630ab52b8e14b4d0/blinker-1.8.2-py3-none-any.whl (9.5 kB)
+Collecting cachelib==0.13.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/9b/42/960fc9896ddeb301716fdd554bab7941c35fb90a1dc7260b77df3366f87f/cachelib-0.13.0-py3-none-any.whl (20 kB)
+Collecting certifi==2024.7.4
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/1c/d5/c84e1a17bf61d4df64ca866a1c9a913874b4e9bdc131ec689a0ad013fb36/certifi-2024.7.4-py3-none-any.whl (162 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.0/163.0 kB 823.0 kB/s eta 0:00:00
+Collecting charset-normalizer==3.3.2
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/98/69/5d8751b4b670d623aa7a47bef061d69c279e9f922f6705147983aa76c3ce/charset_normalizer-3.3.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (142 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.3/142.3 kB 1.2 MB/s eta 0:00:00
+Collecting click==8.1.7
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/00/2e/d53fa4befbf2cfa713304affc7ca780ce4fc1fd8710527771b58311a3229/click-8.1.7-py3-none-any.whl (97 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 904.6 kB/s eta 0:00:00
+Collecting DateTime==5.4
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/ff/d5/f508192a563ab7415d1efbbe8d39cb9f0e510a1f6aaee3ca7d4ffed2a194/DateTime-5.4-py3-none-any.whl (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.5/52.5 kB 812.1 kB/s eta 0:00:00
+Collecting exceptiongroup==1.2.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/01/90/79fe92dd413a9cab314ef5c591b5aa9b9ba787ae4cadab75055b0ae00b33/exceptiongroup-1.2.1-py3-none-any.whl (16 kB)
+Collecting Flask==3.0.3
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/61/80/ffe1da13ad9300f87c93af113edd0638c75138c42a0994becfacac078c06/flask-3.0.3-py3-none-any.whl (101 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.7/101.7 kB 932.1 kB/s eta 0:00:00
+Collecting Flask-Cors==4.0.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/8b/52/2aa6285f104616f73ee1ad7905a16b2b35af0143034ad0cf7b64bcba715c/Flask_Cors-4.0.1-py2.py3-none-any.whl (14 kB)
+Collecting Flask-JWT-Extended==4.6.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/be/f7/b5415a5ec78666408cd9af9e8163e2953374808d222625cff33f64adfd2a/Flask_JWT_Extended-4.6.0-py2.py3-none-any.whl (22 kB)
+Collecting Flask-Session==0.8.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/67/1b/f085ceebb825d1cfaf078852b67cd248a33af2905f40ba9860cc006d966b/flask_session-0.8.0-py3-none-any.whl (24 kB)
+Collecting Flask-Testing==0.8.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/a2/70/5611137c59b576ac36e9e8226f01cd138d4cd08688d5aad9eadfdaf6f57e/Flask-Testing-0.8.1.tar.gz (45 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.2/45.2 kB 695.2 kB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting gunicorn==22.0.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/29/97/6d610ae77b5633d24b69c2ff1ac3044e0e565ecbd1ec188f02c45073054c/gunicorn-22.0.0-py3-none-any.whl (84 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 84.4/84.4 kB 643.8 kB/s eta 0:00:00
+Collecting h11==0.14.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/95/04/ff642e65ad6b90db43e668d70ffb6736436c7ce41fcc549f4e9472234127/h11-0.14.0-py3-none-any.whl (58 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.3/58.3 kB 911.6 kB/s eta 0:00:00
+Collecting idna==3.7
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/e5/3e/741d8c82801c347547f8a2a06aa57dbb1992be9e948df2ea0eda2c8b79e8/idna-3.7-py3-none-any.whl (66 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.8/66.8 kB 942.6 kB/s eta 0:00:00
+Collecting importlib_metadata==8.0.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/dc/ef/38766b2edb096260d9b1b6ad35adaa0bce3b0567abb452b21eb074af88c4/importlib_metadata-8.0.0-py3-none-any.whl (24 kB)
+Collecting iniconfig==2.0.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/ef/a6/62565a6e1cf69e10f5727360368e451d4b7f58beeac6173dc9db836a5b46/iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Collecting itsdangerous==2.2.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/04/96/92447566d16df59b2a776c0fb82dbc4d9e07cd95062562af01e408583fc4/itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Collecting Jinja2==3.1.4
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/31/80/3a54838c3fb461f6fec263ebf3a3a41771bd05190238de3486aae8540c36/jinja2-3.1.4-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.3/133.3 kB 962.5 kB/s eta 0:00:00
+Collecting MarkupSafe==2.1.5
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/5f/5a/360da85076688755ea0cceb92472923086993e86b5613bbae9fbc14136b0/MarkupSafe-2.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Collecting msgspec==0.18.6
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/b7/ee/9967075f4ea0ca3e841e1b98f0f65a6033c464e3542fe594e2e6dad10029/msgspec-0.18.6-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (210 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 210.3/210.3 kB 1.1 MB/s eta 0:00:00
+Collecting outcome==1.3.0.post0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/55/8b/5ab7257531a5d830fc8000c476e63c935488d74609b50f9384a643ec0a62/outcome-1.3.0.post0-py2.py3-none-any.whl (10 kB)
+Collecting packaging==24.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/08/aa/cc0199a5f0ad350994d660967a8efb233fe0416e4639146c089643407ce6/packaging-24.1-py3-none-any.whl (53 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 kB 853.8 kB/s eta 0:00:00
+Collecting pluggy==1.5.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/88/5f/e351af9a41f866ac3f1fac4ca0613908d9a41741cfcf2228f4ad853b697d/pluggy-1.5.0-py3-none-any.whl (20 kB)
+Collecting psycopg2-binary==2.9.9
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/65/04/d0266fd446cb65384ce5442bc08449fd0b5d3419494574f020275f9e2273/psycopg2_binary-2.9.9-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 27.3 MB/s eta 0:00:00
+Collecting pycryptodome==3.20.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/af/20/5f29ec45462360e7f61e8688af9fe4a0afae057edfabdada662e11bf97e7/pycryptodome-3.20.0-cp35-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 3.0 MB/s eta 0:00:00
+Collecting PyJWT==2.8.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/2b/4f/e04a8067c7c96c364cef7ef73906504e2f40d690811c021e1a1901473a19/PyJWT-2.8.0-py3-none-any.whl (22 kB)
+Collecting PyMySQL==1.1.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/e5/30/20467e39523d0cfc2b6227902d3687a16364307260c75e6a1cb4422b0c62/PyMySQL-1.1.0-py3-none-any.whl (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.8/44.8 kB 19.7 MB/s eta 0:00:00
+Collecting PySocks==1.7.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/8d/59/b4572118e098ac8e46e399a1dd0f2d85403ce8bbaad9ec79373ed6badaf9/PySocks-1.7.1-py3-none-any.whl (16 kB)
+Collecting pytest==8.2.2
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/4e/e7/81ebdd666d3bff6670d27349b5053605d83d55548e6bd5711f3b0ae7dd23/pytest-8.2.2-py3-none-any.whl (339 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 339.9/339.9 kB 1.1 MB/s eta 0:00:00
+Collecting pytest-flask==1.3.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/de/03/7a917fda3d0e96b4e80ab1f83a6628ec4ee4a882523b49417d3891bacc9e/pytest_flask-1.3.0-py3-none-any.whl (13 kB)
+Collecting python-dotenv==1.0.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/6a/3e/b68c118422ec867fa7ab88444e1274aa40681c606d59ac27de5a5588f082/python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Collecting pytz==2023.3.post1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/32/4d/aaf7eff5deb402fd9a24a1449a8119f00d74ae9c2efa79f8ef9994261fc2/pytz-2023.3.post1-py2.py3-none-any.whl (502 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 502.5/502.5 kB 1.9 MB/s eta 0:00:00
+Collecting redis==5.0.7
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/2f/3b/db091387f25c202a34030de8f7fee26a69c11b83797eecaef5b06e261966/redis-5.0.7-py3-none-any.whl (252 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 252.1/252.1 kB 50.7 MB/s eta 0:00:00
+Collecting requests==2.32.3
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl (64 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 590.3 kB/s eta 0:00:00
+Collecting selenium==4.22.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/f2/7d/3a0b9c229d87a189b64c3b8e6d87a970a1ef7875995dc31bd18e65fa1c17/selenium-4.22.0-py3-none-any.whl (9.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.4/9.4 MB 7.4 MB/s eta 0:00:00
+Collecting six==1.16.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting sniffio==1.3.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl (10 kB)
+Collecting sortedcontainers==2.4.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+Collecting tomli==2.0.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl (12 kB)
+Collecting trio==0.26.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/77/34/461280cc615614a9e434c6e23373371a2436f71d045303cadabb1d775eba/trio-0.26.0-py3-none-any.whl (475 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 475.7/475.7 kB 1.5 MB/s eta 0:00:00
+Collecting trio-websocket==0.11.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/48/be/a9ae5f50cad5b6f85bd2574c2c923730098530096e170c1ce7452394d7aa/trio_websocket-0.11.1-py3-none-any.whl (17 kB)
+Collecting typing_extensions==4.12.2
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Collecting urllib3==2.2.2
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/ca/1c/89ffc63a9605b583d5df2be791a27bc1a42b7c32bab68d3c8f2f73a98cd4/urllib3-2.2.2-py3-none-any.whl (121 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.4/121.4 kB 770.8 kB/s eta 0:00:00
+Collecting webdriver-manager==4.0.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/b1/51/b5c11cf739ac4eecde611794a0ec9df420d0239d51e73bc19eb44f02b48b/webdriver_manager-4.0.1-py2.py3-none-any.whl (27 kB)
+Collecting websocket-client==1.8.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/5a/84/44687a29792a70e111c5c477230a72c4b957d88d16141199bf9acb7537a3/websocket_client-1.8.0-py3-none-any.whl (58 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.8/58.8 kB 850.2 kB/s eta 0:00:00
+Collecting Werkzeug==3.0.3
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/9d/6e/e792999e816d19d7fcbfa94c730936750036d65656a76a5a688b57a656c4/werkzeug-3.0.3-py3-none-any.whl (227 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 227.3/227.3 kB 1.5 MB/s eta 0:00:00
+Collecting wsproto==1.2.0
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/78/58/e860788190eba3bcce367f74d29c4675466ce8dddfba85f7827588416f01/wsproto-1.2.0-py3-none-any.whl (24 kB)
+Collecting zipp==3.19.2
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/20/38/f5c473fe9b90c8debdd29ea68d5add0289f1936d6f923b6b9cc0b931194c/zipp-3.19.2-py3-none-any.whl (9.0 kB)
+Collecting zope.interface==6.1
+  Downloading https://mirrors.cloud.tencent.com/pypi/packages/e2/16/bb47952247e16b661cd4fe63c8706748b485b0627265c14778b53980235e/zope.interface-6.1-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (246 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 246.2/246.2 kB 802.5 kB/s eta 0:00:00
+Requirement already satisfied: setuptools in /usr/local/lib/python3.9/site-packages (from zope.interface==6.1->-r requirements.txt (line 53)) (58.1.0)
+Building wheels for collected packages: Flask-Testing
+  Building wheel for Flask-Testing (setup.py): started
+  Building wheel for Flask-Testing (setup.py): finished with status 'done'
+  Created wheel for Flask-Testing: filename=Flask_Testing-0.8.1-py3-none-any.whl size=8188 sha256=15a712e894d9462dc2deda81b655330eda32aacd6f065e06c57c8b81e9c0376e
+  Stored in directory: /tmp/pip-ephem-wheel-cache-_ruu2lop/wheels/e3/68/c3/addb36757be3018f8342c245206a54917b18e26fcf46b9cc65
+Successfully built Flask-Testing
+Installing collected packages: sortedcontainers, pytz, zope.interface, zipp, websocket-client, urllib3, typing_extensions, tomli, sniffio, six, python-dotenv, PySocks, PyMySQL, PyJWT, pycryptodome, psycopg2-binary, pluggy, packaging, msgspec, MarkupSafe, itsdangerous, iniconfig, idna, h11, exceptiongroup, click, charset-normalizer, certifi, cachelib, blinker, bcrypt, attrs, async-timeout, wsproto, Werkzeug, requests, redis, pytest, outcome, Jinja2, importlib_metadata, gunicorn, DateTime, webdriver-manager, trio, Flask, trio-websocket, pytest-flask, Flask-Testing, Flask-Session, Flask-JWT-Extended, Flask-Cors, selenium
+Successfully installed DateTime-5.4 Flask-3.0.3 Flask-Cors-4.0.1 Flask-JWT-Extended-4.6.0 Flask-Session-0.8.0 Flask-Testing-0.8.1 Jinja2-3.1.4 MarkupSafe-2.1.5 PyJWT-2.8.0 PyMySQL-1.1.0 PySocks-1.7.1 Werkzeug-3.0.3 async-timeout-4.0.3 attrs-23.2.0 bcrypt-4.1.3 blinker-1.8.2 cachelib-0.13.0 certifi-2024.7.4 charset-normalizer-3.3.2 click-8.1.7 exceptiongroup-1.2.1 gunicorn-22.0.0 h11-0.14.0 idna-3.7 importlib_metadata-8.0.0 iniconfig-2.0.0 itsdangerous-2.2.0 msgspec-0.18.6 outcome-1.3.0.post0 packaging-24.1 pluggy-1.5.0 psycopg2-binary-2.9.9 pycryptodome-3.20.0 pytest-8.2.2 pytest-flask-1.3.0 python-dotenv-1.0.1 pytz-2023.3.post1 redis-5.0.7 requests-2.32.3 selenium-4.22.0 six-1.16.0 sniffio-1.3.1 sortedcontainers-2.4.0 tomli-2.0.1 trio-0.26.0 trio-websocket-0.11.1 typing_extensions-4.12.2 urllib3-2.2.2 webdriver-manager-4.0.1 websocket-client-1.8.0 wsproto-1.2.0 zipp-3.19.2 zope.interface-6.1
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[0m[91m
+[notice] A new release of pip is available: 23.0.1 -> 24.1.2
+[notice] To update, run: pip install --upgrade pip
+[0mRemoving intermediate container 2545c7d61bd3
+ ---> 9f518618c60c
+Step 5/5 : EXPOSE 8082
+ ---> Running in c881828f3b49
+Removing intermediate container c881828f3b49
+ ---> 4e13b3aa927c
+
+Successfully built 4e13b3aa927c
+Successfully tagged software_project_web:latest
+Recreating emall_db_test ... 
+Recreating emall_redis_test ... 
+[2A[2KRecreating emall_db_test    ... [32mdone[0m[2B[1A[2KRecreating emall_redis_test ... [32mdone[0m[1BRecreating emall_app_test   ... 
+[1A[2KRecreating emall_app_test   ... [32mdone[0m[1BAttaching to emall_db, emall_redis_dev, emall_app
+[33memall_db |[0m The files belonging to this database system will be owned by user "postgres".
+[33memall_db |[0m This user must also own the server process.
+[33memall_db |[0m 
+[33memall_db |[0m The database cluster will be initialized with locale "en_US.utf8".
+[33memall_db |[0m The default database encoding has accordingly been set to "UTF8".
+[33memall_db |[0m The default text search configuration will be set to "english".
+[33memall_db |[0m 
+[33memall_db |[0m Data page checksums are disabled.
+[33memall_db |[0m 
+[33memall_db |[0m fixing permissions on existing directory /var/lib/postgresql/data ... ok
+[33memall_db |[0m creating subdirectories ... ok
+[33memall_db |[0m selecting dynamic shared memory implementation ... posix
+[33memall_db |[0m selecting default max_connections ... 100
+[33memall_db |[0m selecting default shared_buffers ... 128MB
+[33memall_db |[0m selecting default time zone ... Etc/UTC
+[33memall_db |[0m creating configuration files ... ok
+[33memall_db |[0m running bootstrap script ... ok
+[32memall_redis_dev |[0m 1:C 12 Jul 2024 05:29:58.732 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+[32memall_redis_dev |[0m 1:C 12 Jul 2024 05:29:58.733 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+[32memall_redis_dev |[0m 1:C 12 Jul 2024 05:29:58.733 * Redis version=7.2.5, bits=64, commit=00000000, modified=0, pid=1, just started
+[32memall_redis_dev |[0m 1:C 12 Jul 2024 05:29:58.733 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+[32memall_redis_dev |[0m 1:M 12 Jul 2024 05:29:58.734 * monotonic clock: POSIX clock_gettime
+[32memall_redis_dev |[0m 1:M 12 Jul 2024 05:29:58.739 * Running mode=standalone, port=6379.
+[32memall_redis_dev |[0m 1:M 12 Jul 2024 05:29:58.740 * Server initialized
+[32memall_redis_dev |[0m 1:M 12 Jul 2024 05:29:58.740 * Ready to accept connections tcp
+[36memall_app |[0m CURRENT_ENV: development_docker
+[36memall_app |[0m CURRENT_ENV: development_docker
+[36memall_app |[0m  * Serving Flask app 'emall.app'
+[36memall_app |[0m  * Debug mode: on
+[36memall_app |[0m [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+[36memall_app |[0m  * Running on all addresses (0.0.0.0)
+[36memall_app |[0m  * Running on http://127.0.0.1:8082
+[36memall_app |[0m  * Running on http://172.20.0.4:8082
+[36memall_app |[0m [33mPress CTRL+C to quit[0m
+[36memall_app |[0m  * Restarting with stat
+[33memall_db |[0m performing post-bootstrap initialization ... ok
+[33memall_db |[0m syncing data to disk ... ok
+[33memall_db |[0m 
+[33memall_db |[0m initdb: warning: enabling "trust" authentication for local connections
+[33memall_db |[0m You can change this by editing pg_hba.conf or using the option -A, or
+[33memall_db |[0m --auth-local and --auth-host, the next time you run initdb.
+[33memall_db |[0m 
+[33memall_db |[0m Success. You can now start the database server using:
+[33memall_db |[0m 
+[33memall_db |[0m     pg_ctl -D /var/lib/postgresql/data -l logfile start
+[33memall_db |[0m 
+[33memall_db |[0m waiting for server to start....2024-07-12 05:29:59.958 UTC [47] LOG:  starting PostgreSQL 12.18 (Debian 12.18-1.pgdg120+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[33memall_db |[0m 2024-07-12 05:29:59.960 UTC [47] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33memall_db |[0m 2024-07-12 05:29:59.980 UTC [48] LOG:  database system was shut down at 2024-07-12 05:29:59 UTC
+[33memall_db |[0m 2024-07-12 05:29:59.985 UTC [47] LOG:  database system is ready to accept connections
+[36memall_app |[0m  * Debugger is active!
+[36memall_app |[0m  * Debugger PIN: 119-412-415
+[33memall_db |[0m  done
+[33memall_db |[0m server started
+[33memall_db |[0m CREATE DATABASE
+[33memall_db |[0m 
+[33memall_db |[0m 
+[33memall_db |[0m /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/init.sql
+[33memall_db |[0m SET
+[33memall_db |[0m SET
+[33memall_db |[0m SET
+[33memall_db |[0m SET
+[33memall_db |[0m SET
+[33memall_db |[0m  set_config 
+[33memall_db |[0m ------------
+[33memall_db |[0m  
+[33memall_db |[0m (1 row)
+[33memall_db |[0m 
+[33memall_db |[0m SET
+[33memall_db |[0m SET
+[33memall_db |[0m SET
+[33memall_db |[0m SET
+[33memall_db |[0m SET
+[33memall_db |[0m SET
+[33memall_db |[0m CREATE TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m CREATE SEQUENCE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER SEQUENCE
+[33memall_db |[0m CREATE TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m CREATE TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m CREATE TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m CREATE SEQUENCE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER SEQUENCE
+[33memall_db |[0m CREATE TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m CREATE SEQUENCE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER SEQUENCE
+[33memall_db |[0m CREATE TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m CREATE SEQUENCE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER SEQUENCE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m COPY 1
+[33memall_db |[0m COPY 2
+[33memall_db |[0m COPY 0
+[33memall_db |[0m COPY 17
+[33memall_db |[0m COPY 1
+[33memall_db |[0m COPY 8
+[33memall_db |[0m  setval 
+[33memall_db |[0m --------
+[33memall_db |[0m       3
+[33memall_db |[0m (1 row)
+[33memall_db |[0m 
+[33memall_db |[0m  setval 
+[33memall_db |[0m --------
+[33memall_db |[0m      17
+[33memall_db |[0m (1 row)
+[33memall_db |[0m 
+[33memall_db |[0m  setval 
+[33memall_db |[0m --------
+[33memall_db |[0m       1
+[33memall_db |[0m (1 row)
+[33memall_db |[0m 
+[33memall_db |[0m  setval 
+[33memall_db |[0m --------
+[33memall_db |[0m      10
+[33memall_db |[0m (1 row)
+[33memall_db |[0m 
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m ALTER TABLE
+[33memall_db |[0m 
+[33memall_db |[0m 
+[33memall_db |[0m 2024-07-12 05:30:00.288 UTC [47] LOG:  received fast shutdown request
+[33memall_db |[0m waiting for server to shut down....2024-07-12 05:30:00.290 UTC [47] LOG:  aborting any active transactions
+[33memall_db |[0m 2024-07-12 05:30:00.295 UTC [47] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+[33memall_db |[0m 2024-07-12 05:30:00.295 UTC [49] LOG:  shutting down
+[33memall_db |[0m 2024-07-12 05:30:00.308 UTC [47] LOG:  database system is shut down
+[33memall_db |[0m  done
+[33memall_db |[0m server stopped
+[33memall_db |[0m 
+[33memall_db |[0m PostgreSQL init process complete; ready for start up.
+[33memall_db |[0m 
+[33memall_db |[0m 2024-07-12 05:30:00.406 UTC [1] LOG:  starting PostgreSQL 12.18 (Debian 12.18-1.pgdg120+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[33memall_db |[0m 2024-07-12 05:30:00.406 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+[33memall_db |[0m 2024-07-12 05:30:00.406 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+[33memall_db |[0m 2024-07-12 05:30:00.410 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+[33memall_db |[0m 2024-07-12 05:30:00.425 UTC [85] LOG:  database system was shut down at 2024-07-12 05:30:00 UTC
+[33memall_db |[0m 2024-07-12 05:30:00.430 UTC [1] LOG:  database system is ready to accept connections
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:48] "GET / HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:48] "GET /static/user_avatar.webp HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/牛奶.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/苹果.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/饼干.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/shopping-cart-icon.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/矿泉水.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/红楼梦.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/纸巾.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/iPhone.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/joke.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/牙刷.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/帽子.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/冰箱.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/消毒水.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/键盘.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/面霜.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/雨伞.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/蛋糕.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/方便面.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "GET /static/img/数据库.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:52] "GET /login HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:30:54] "GET /register HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[32mPOST /register HTTP/1.1[0m" 302 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "GET / HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/苹果.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/shopping-cart-icon.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:08] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[32mPOST /add_to_cart HTTP/1.1[0m" 302 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "GET / HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/shopping-cart-icon.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/苹果.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:10] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "[32mPOST /add_to_cart HTTP/1.1[0m" 302 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "GET / HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "[36mGET /static/img/苹果.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "[36mGET /static/shopping-cart-icon.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:11] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:12] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:18] "POST / HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:18] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:18] "[36mGET /static/shopping-cart-icon.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:18] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:18] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:18] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[32mPOST /add_to_cart HTTP/1.1[0m" 302 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "GET / HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/苹果.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/shopping-cart-icon.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:20] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:21] "GET /cart HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:21] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:21] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:21] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:21] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[32mPOST /cart HTTP/1.1[0m" 302 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "GET / HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/shopping-cart-icon.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/苹果.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:24] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:25] "GET /detail HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:26] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:26] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:30] "GET / HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/shopping-cart-icon.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/苹果.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:31] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:32] "[32mGET /logout HTTP/1.1[0m" 302 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:32] "GET /login HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:32] "GET /login HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:40] "[32mPOST /login HTTP/1.1[0m" 302 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:40] "GET /admin HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:40] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/苹果.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:41] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "POST /admin HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/苹果.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:52] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:53] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:53] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:53] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:53] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:53] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:53] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:56] "POST /admin HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:31:57] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:12] "GET /admin HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:12] "[35m[1mPUT /admin/add_goods HTTP/1.1[0m" 500 -
+[36memall_app |[0m Traceback (most recent call last):
+[36memall_app |[0m   File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1498, in __call__
+[36memall_app |[0m     return self.wsgi_app(environ, start_response)
+[36memall_app |[0m   File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1476, in wsgi_app
+[36memall_app |[0m     response = self.handle_exception(e)
+[36memall_app |[0m   File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+[36memall_app |[0m     response = self.full_dispatch_request()
+[36memall_app |[0m   File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+[36memall_app |[0m     rv = self.handle_user_exception(e)
+[36memall_app |[0m   File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+[36memall_app |[0m     rv = self.dispatch_request()
+[36memall_app |[0m   File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+[36memall_app |[0m     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+[36memall_app |[0m   File "/app/emall/app.py", line 235, in add_goods
+[36memall_app |[0m     image.save(os.path.join(app.config['IMAGE_FOLDER'], f'{goods_name}.jpg'))
+[36memall_app |[0m   File "/usr/local/lib/python3.9/site-packages/werkzeug/datastructures/file_storage.py", line 125, in save
+[36memall_app |[0m     dst = open(dst, "wb")
+[36memall_app |[0m FileNotFoundError: [Errno 2] No such file or directory: './static/img/水杯.jpg'
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:13] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:15] "GET /admin HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:15] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:15] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:15] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:15] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:15] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:15] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:15] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:16] "GET /static/img/水杯.jpg HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:22] "GET /admin/order HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:23] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:23] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "GET / HTTP/1.1" 200 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/user_avatar.webp HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/shopping-cart-icon.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/img/牛奶.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/img/矿泉水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/img/纸巾.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/img/iPhone.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/img/红楼梦.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/joke.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/img/帽子.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/img/牙刷.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:40] "[36mGET /static/img/冰箱.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:41] "[36mGET /static/img/键盘.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:41] "[36mGET /static/img/面霜.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:41] "[36mGET /static/img/雨伞.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:41] "[36mGET /static/img/蛋糕.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:41] "[36mGET /static/img/方便面.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:41] "[36mGET /static/img/数据库.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:41] "[36mGET /static/img/饼干.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:41] "[36mGET /static/img/消毒水.jpg HTTP/1.1[0m" 304 -
+[36memall_app |[0m 172.20.0.1 - - [12/Jul/2024 05:32:41] "[36mGET /static/img/水杯.jpg HTTP/1.1[0m" 304 -
+Stopping emall_app          ... 
+Stopping emall_redis_dev    ... 
+Stopping emall_db           ... 
+[3A[2KStopping emall_app          ... [32mdone[0m[3B[1A[2KStopping emall_db           ... [32mdone[0m[1B[2A[2KStopping emall_redis_dev    ... [32mdone[0m[2BGracefully stopping... (press Ctrl+C again to force)
